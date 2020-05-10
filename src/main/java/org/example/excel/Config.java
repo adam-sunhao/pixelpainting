@@ -10,7 +10,7 @@ public class Config {
     /**
      * 设置图片填充模式
      */
-    public static FillPatternType fillPatternType = FillPatternType.FINE_DOTS;
+    public static FillPatternType fillPatternType = FillPatternType.NO_FILL;
     /**
      * 单元格的宽度
      */
