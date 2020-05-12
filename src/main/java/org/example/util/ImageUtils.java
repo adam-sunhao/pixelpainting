@@ -56,10 +56,10 @@ public class ImageUtils {
         int height = image.getHeight();
         picture.setWidth(width);
         picture.setHeight(height);
-        Color[][] pixels = new Color[width][height];
+        Color[][] pixels = new Color[height][width];
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                pixels[i][j] = new Color(image.getRGB(i, j));
+                pixels[j][i] = new Color(image.getRGB(i, j));
             }
         }
         picture.setPixels(pixels);
