@@ -17,10 +17,10 @@ public class ImageUtils {
 
     public static String[] getImageDirAndFilename(String file) {
         File imageFile = new File(file);
-        if(!imageFile.exists()) {
+        if (!imageFile.exists()) {
             throw new BaseException("图片不存在!");
         }
-        if(!imageFile.isFile()) {
+        if (!imageFile.isFile()) {
             throw new BaseException("图片路径异常!");
         }
         String imageFileName = imageFile.getName();
@@ -47,6 +47,7 @@ public class ImageUtils {
 
     /**
      * 获取图片宽、高、rgb值等信息
+     *
      * @param image
      * @return
      */
@@ -74,12 +75,12 @@ public class ImageUtils {
     private static String getFormat(String filename) {
         int end = filename.indexOf(".");
         String format = filename.substring(end + 1);
-        if(!ImageEnum.exists(format)) {
+        if (!ImageEnum.exists(format)) {
             StringBuilder formatsBuilder = new StringBuilder();
-            for(ImageEnum imageEnum : ImageEnum.values()) {
+            for (ImageEnum imageEnum : ImageEnum.values()) {
                 formatsBuilder.append("/").append(imageEnum.getFormat());
             }
-            throw new BaseException("请选择图片格式为 ["+ formatsBuilder.toString() +"] 的文件!");
+            throw new BaseException("请选择图片格式为 [" + formatsBuilder.toString() + "] 的文件!");
         }
         return format;
     }

@@ -52,7 +52,7 @@ public class ExcelUtils {
             for (int j = 0; j < pixels[i].length; j++) {
                 SXSSFCell cell = row.createCell(j);
                 XSSFCellStyle xssfCellStyle = cellStyleMap.get(pixels[i][j].toString());
-                if(xssfCellStyle == null) {
+                if (xssfCellStyle == null) {
                     //创建单元格样式
                     xssfCellStyle = (XSSFCellStyle) workbook.createCellStyle();
                     xssfCellStyle.setFillPattern(Config.fillPatternType);
@@ -63,10 +63,10 @@ public class ExcelUtils {
             }
             //113 height
             //241 width
-            row.setHeight((short)113);
+            row.setHeight((short) 113);
         }
 
-        for(int i = 0; i < pixels[0].length; i++) {
+        for (int i = 0; i < pixels[0].length; i++) {
             sheet.setColumnWidth(i, 241);
         }
 
@@ -74,6 +74,7 @@ public class ExcelUtils {
 
     /**
      * 大失败，一个.xlsx表格只能有64000个样式
+     *
      * @param dirAndFilename
      * @param picture
      * @throws IOException
@@ -149,7 +150,7 @@ public class ExcelUtils {
     }
 
     private static void closeStream(InputStream is) {
-        if(is != null) {
+        if (is != null) {
             try {
                 is.close();
             } catch (IOException e) {

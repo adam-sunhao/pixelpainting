@@ -6,7 +6,7 @@ package org.example.util;
  */
 public enum ImageEnum {
     //支持得图片格式: jpg,jpeg,png
-    JPG("jpg"),JPEG("jpeg"),PNG("png");
+    JPG("jpg"), JPEG("jpeg"), PNG("png");
 
     private String format;
 
@@ -20,12 +20,13 @@ public enum ImageEnum {
 
     /**
      * 输入指定格式，判断是否存在
+     *
      * @param format
      * @return
      */
     public static boolean exists(String format) {
-        for(ImageEnum ie : ImageEnum.values()) {
-            if(ie.getFormat().equals(format)) {
+        for (ImageEnum ie : ImageEnum.values()) {
+            if (ie.getFormat().equals(format)) {
                 return true;
             }
         }
